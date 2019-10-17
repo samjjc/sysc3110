@@ -8,8 +8,16 @@ public class AddressBook {
 		this.buddyInfo = new ArrayList<BuddyInfo>();
 	}
 	
-	public void addBuddy(BuddyInfo buddyInfo) {
-		this.buddyInfo.add(buddyInfo);
+	public void addBuddy(BuddyInfo b) {
+		if (b != null) {
+			this.buddyInfo.add(b);
+		}
+	}
+	
+	public void removeBuddy(int index) {
+		if (index >=0 && index < this.buddyInfo.size()) {
+			this.buddyInfo.remove(index);
+		}
 	}
 
 	public static void main(String[] args) {
@@ -19,5 +27,10 @@ public class AddressBook {
 		AddressBook book = new AddressBook();
 		book.addBuddy(b);
 
+	}
+
+	public AddressBook(List<BuddyInfo> buddyInfo) {
+		super();
+		this.buddyInfo = buddyInfo;
 	}
 }
